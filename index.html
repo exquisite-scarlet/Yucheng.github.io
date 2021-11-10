@@ -1,454 +1,180 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yucheng</title>
-
-    <style>
-        .nav {
-            margin: auto;
-            height: 41px;
-            border-top: 3px rgb(255, 179, 204);
-            border-bottom: 4px solid #edeef0;
-            background-image: url(css/safari.jpg);
-            line-height: 41px;
-            position: fixed;
-        }
-        
-        .nav a {
-            font-size: 20px;
-            font-family: '华文彩云';
-            font-weight: 900;
-            color: rgb(36, 2, 75);
-            text-decoration: none;
-            display: inline-block;
-            padding: 0 40px;
-            height: 40px;
-        }
-        
-        a.contact {
-            margin-right: 0px;
-            margin-left: 500px;
-        }
-        
-        .nav a:hover {
-            background-color: hotpink;
-            color: rgb(255, 255, 255);
-        }
-        
-        a.contact:hover {
-            background-image: url(images/face.png);
-        }
-        
-        body {
-            background-image: url(images/background.jpg);
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            -webkit-background-size: cover;
-            -o-background-size: cover;
-            background-position: center 0;
-            background-attachment: fixed;
-        }
-        
-        .empty {
-            height: 50px;
-            background-repeat: no-repeat;
-        }
-        
-        table {
-            margin: auto;
-            width: 1100px;
-            background: rgba(255, 255, 255, 0.5);
-        }
-        
-        .STYLE3 {
-            font-size: 35px;
-            font-family: "华文行楷";
-            font-weight: initial;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 2px black;
-        }
-        
-        .STYLE4 {
-            font-size: larger;
-            font-weight: lighter;
-            font-family: "华文新魏";
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 2px black;
-        }
-        
-        .ustc01 {
-            font-family: "宋体";
-            font-size: 12px;
-            font-style: normal;
-            line-height: 20px;
-            color: #333333;
-            text-decoration: none;
-            padding-left: 15px;
-        }
-        
-        .ustc02 {
-            font-family: "宋体";
-            font-size: 12px;
-            font-style: normal;
-            line-height: 20px;
-            color: #25609A;
-            text-decoration: none;
-        }
-        
-        .ustc03 {
-            font-family: "黑体";
-            font-size: 40px;
-            font-style: normal;
-            color: #1002ce;
-            text-decoration: none;
-            font-weight: normal;
-        }
-        
-        .ustc04 {
-            font-family: "宋体";
-            font-size: 14px;
-            font-style: normal;
-            line-height: 26px;
-            color: #616060;
-            text-decoration: none;
-        }
-        
-        .ustc08 {
-            font-family: "宋体";
-            font-size: 12px;
-            font-style: normal;
-            line-height: 24px;
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-        
-        .ustc05 {
-            font-family: "宋体";
-            font-size: 14px;
-            font-style: normal;
-            line-height: 22px;
-            font-weight: normal;
-            color: #e20d0d;
-            text-decoration: none;
-        }
-        
-        .ustc06 {
-            font-family: "黑体";
-            font-size: 20px;
-            font-style: normal;
-            line-height: 22px;
-            font-weight: normal;
-            color: #424242;
-            text-decoration: none;
-        }
-        
-        .ustc07 {
-            font-family: "黑体";
-            font-size: 20px;
-            font-style: normal;
-            line-height: 22px;
-            color: #cdb681;
-            text-decoration: none;
-        }
-    </style>
+    <title>Optical Tweezers</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--[if IE]>
+		<script src="js/html5shiv.min.js"></script>
+	<![endif]-->
 </head>
 
 <body>
-    <div class="nav">
-        <a href="index.html">个人信息</a>
-        <a href="history.html">科研经历</a>
-        <a href="ex.html">文书证件</a>
-        <a href="contact.html" class="contact">爱好</a>
-    </div>
-    <div class="empty">
 
 
-    </div>
+    <script src='js/snap.svg-min.js'></script>
+    <script type="text/javascript">
+        window.onload = function(argument) {
+            w = window.innerWidth,
+                h = window.innerHeight;
 
-    <table>
-        <!--DWLayoutDefaultTable-->
-        <tr>
-            <td align="center">
-                <table width="950" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                        <tr>
-                            <td colspan="3">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td width="213" align="center">
+            /* svg init */
+            var paper = Snap(w, h);
 
-                                <img height="220" src="images/self_profile.jpg" width="151">
+            var team_rwby = {
+                "ruby": "pictures/4.jpg",
+                "weiss": "pictures/12.jpg",
+                "blake": "pictures/10.jpg",
+                "yang": "pictures/8.jpg",
+                "duan": "pictures/13.jpg"
+            };
+            var link_rwby = {
+                "ruby": "demo/index.html",
+                "weiss": "lab/labpresent.html",
+                "blake": "https://www.zhihu.com/",
+                "yang": "table/table.html",
+                "duan": "http://play.quantumgame.io/"
+            }
 
 
-                            </td>
-                            <td height="60" align="center" valign="top">
-                                <table width="98%" border="0" cellspacing="6" cellpadding="0">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" class="ustc03">段宇丞</td>
-                                        </tr>
-                                        <tr>
-                                            <td align="left" class="ustc04">身份证号：370103200004013015
-                                                <br> 性别：男 民族：汉
-                                                <br> 在读院校：山东大学
-                                                <br> 邮箱：201805100122@mail.sdu.edu.cn
-                                                <br> 电话：+86 18366182768
-                                                <br> 政治面貌：中共预备党员
-                                                <!--                传真：<br /> -->
+            /* this polygons' array include coordinates and image's source  */
+            var polygons = [];
+            polygons.push({
+                "coordinates": [
+                    [0, 0],
+                    [w * 0.6, 0],
+                    [0, h * 0.5]
+                ],
+                "strokeStyle": "black",
+                "strokeWidth": 10,
+                "image_src": team_rwby.ruby,
+                "link": link_rwby.ruby
+            }, {
+                "coordinates": [
+                    [0, h * 0.5],
+                    [w * 0.3, h * 0.25],
+                    [w * 0.55, h],
+                    [0, h]
+                ],
+                "strokeStyle": "black",
+                "strokeWidth": 10,
+                "image_src": team_rwby.yang,
+                "link": link_rwby.yang
+            }, {
+                "coordinates": [
+                    [w * 0.3, h * 0.25],
+                    [w * 0.75, h * 0.55],
+                    [w * 0.55, h],
+                ],
+                "strokeStyle": "black",
+                "strokeWidth": 10,
+                "image_src": team_rwby.blake,
+                "link": link_rwby.blake
+            }, {
+                "coordinates": [
+                    [w * 0.55, h],
+                    [w, 0],
+                    [w, h],
+                ],
+                "strokeStyle": "black",
+                "strokeWidth": 10,
+                "image_src": team_rwby.duan,
+                "link": link_rwby.duan
+            }, {
+                "coordinates": [
+                    [w * 0.6, 0],
+                    [w, 0],
+                    [w * 0.75, h * 0.55],
+                    [w * 0.3, h * 0.25],
+                ],
+                "strokeStyle": "black",
+                "strokeWidth": 10,
+                "image_src": team_rwby.weiss,
+                "link": link_rwby.weiss
+            });
 
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td width="291" align="center">
-                                <!--<img src="images/logo.jpg" width="242" height="242" />--></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table width="950" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                        <tr>
-                            <td height="25">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="100%" border="0" cellspacing="8" cellpadding="0">
-                                    <tbody>
-                                        <tr>
-                                            <td width="12%" align="center" class="ustc06">个人简介</td>
-                                            <td width="2%"><img src="images/pic005.jpg" width="10" height="19"></td>
-                                            <td width="30%" align="left" class="ustc07">Personal resume</td>
-                                            <td width="56%">
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td height="7" align="center" background="images/pic004.jpg" style="border-top:#e5e6e8 1px solid; border-bottom:#e5e6e8 1px solid;"></td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="950" border="0" cellspacing="10" cellpadding="0" style="table-layout:fixed">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" class="ustc04"><pre style="white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;">
-段宇丞，2018年进入山东大学泰山学堂读物理专业。大学两年半百分制总成绩90.32，排名2/18，两次获山东大学学业一等奖学金、优秀团干部、特长奖学金、网络工作奖。
-大学期间修完物理系的五小力学、四大力学、数分高代等课程后，又选修数字电路、单片机、实时测量、铁磁学、半导体物理等应用课程，旁听量子光学、高等量子力学等课程，参加了中科大的LINKE量子计算研讨班，对量子计算有着浓厚的兴趣，并同时具有一定知识基础。
-本人在各种Project和竞赛活动中擅长扮演“多面手”和“兜底侠”的角色，有较强学习能力，在日常生活里，心地善良，勤劳勇敢，认真能干，是团队的得力助手。
-                                            </pre></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table width="950" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                        <tr>
-                            <td height="25">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="100%" border="0" cellspacing="8" cellpadding="0" style="table-layout:fixed">
-                                    <tbody>
-                                        <tr>
-                                            <td width="12%" align="center" class="ustc06">科研经历</td>
-                                            <td width="2%"><img src="images/pic005.jpg" width="10" height="19"></td>
-                                            <td width="30%" align="left" class="ustc07">Research Experience</td>
-                                            <td width="56%">
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td height="7" align="center" background="images/pic004.jpg" style="border-top:#e5e6e8 1px solid; border-bottom:#e5e6e8 1px solid;"></td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="97%" border="0" cellspacing="10" cellpadding="0" style="table-layout:fixed">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" class="ustc04">
-                                                <div>1. Building an automated 2D device fabrication system in glove box. 2020.8, Fudan University, Supervisor:<a href="http://phys.fudan.edu.cn/f7/62/c7605a63330/page.htm">Yuanbo Zhang</a>.</div>
-                                                <div>大二暑假加入复旦大学张远波教授团队使用SolidWorks软件对“手套箱中全自动二维材料转移平台”进行设计，现已完成加工、组装，并投入使用，运行良好。(详见导航栏“科研经历”)
+            for (var i = 0; i < polygons.length; i++) {
+                make_polygon_layout(paper, polygons[i], i);
+            }
 
-                                                </div>
-                                                <div>2. Quantum information processing based on Quantum Walk. 2020.10-2021.4, Shandong University, Group leader:<a href="https://www.phy.sdu.edu.cn/info/1071/4662.htm">Dianmin Tong</a>, Supervisor: <a href="https://faculty.sdu.edu.cn/xuguofu/zh_CN/zhym/662794/list/index.htm">Guofu Xu</a></div>
-                                                <div>大三进行山大科创开题“基于量子行走的量子信息处理”，探讨了一维、一维环上的Hadamard量子随机行走的性质，并对量子搜索过程模拟和解释。(详见导航栏“科研经历”)</div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table width="950" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                        <tr>
-                            <td height="25">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="100%" border="0" cellspacing="8" cellpadding="0" style="table-layout:fixed">
-                                    <tbody>
-                                        <tr>
-                                            <td width="12%" align="center" class="ustc06">拥有技能</td>
-                                            <td width="2%"><img src="images/pic005.jpg" width="10" height="19"></td>
-                                            <td width="30%" align="left" class="ustc07">Owned skills</td>
-                                            <td width="56%">
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td height="7" align="center" background="images/pic004.jpg" style="border-top:#e5e6e8 1px solid; border-bottom:#e5e6e8 1px solid;"></td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="97%" border="0" cellspacing="10" cellpadding="0" style="table-layout:fixed">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" class="ustc04">
-                                                <div> 1. 编程语言：Python, C, MATLAB, HTML5, VB, tex, dos</div>
-                                                <div> 2. 软件：SolidWorks, PS\PR\AE, LabView, VS, Arduino, Office系列等</div>
-                                                <div> 3. 其他技能：小提琴，魔方，辩论，写作，做鬼畜</div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table width="950" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                        <tr>
-                            <td height="25">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="100%" border="0" cellspacing="8" cellpadding="0" style="table-layout:fixed">
-                                    <tbody>
-                                        <tr>
-                                            <td width="12%" align="center" class="ustc06">工作经历</td>
-                                            <td width="2%"><img src="images/pic005.jpg" width="10" height="19"></td>
-                                            <td width="30%" align="left" class="ustc07">Enrollment information</td>
-                                            <td width="56%">
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td height="7" align="center" background="images/pic004.jpg" style="border-top:#e5e6e8 1px solid; border-bottom:#e5e6e8 1px solid;"></td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="97%" border="0" cellspacing="10" cellpadding="0" style="table-layout:fixed">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" class="ustc04"><pre style="white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;">
-        2019.02-2020.06    参与创建山大跑酷社，任跑酷社管理员
-        2019.03-2021.05    任泰山学堂宣传委员，负责写稿、审核等工作
-        2019.04-2019.05    参与组织泰山学堂迎新晚会，任别动队负责人
-        2020.07-2020.08    去往复旦大学张远波老师组进行实习
-        2020.04-2020.05    加入“大学生讲思政课”活动，任后期
-        2020.11-2021.05    组织“泰山学子讲堂”活动，参与编辑学堂十周年视频
-                                            </pre></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table width="950" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                        <tr>
-                            <td height="25">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="100%" border="0" cellspacing="8" cellpadding="0">
-                                    <tbody>
-                                        <tr>
-                                            <td width="12%" align="center" class="ustc06">获奖情况</td>
-                                            <td width="2%"><img src="images/pic005.jpg" width="10" height="19"></td>
-                                            <td width="30%" align="left" class="ustc07">Awards</td>
-                                            <td width="56%">
-                                                <a target="_blank"></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td height="7" align="center" background="images/pic004.jpg" style="border-top:#e5e6e8 1px solid; border-bottom:#e5e6e8 1px solid;"></td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="97%" border="0" cellspacing="10" cellpadding="0" style="table-layout:fixed">
-                                    <tbody>
-                                        <tr>
-                                            <td align="left" class="ustc04">
-                                                <div class="Scroll">
-                                                    <div>● CUMCM 2019 first prize</div>
-                                                    <div>● Academic First Class Scholarship</div>
-                                                    <div>● Excellent League Member of the year</div>
-                                                    <div>● Physics Competition for Undergraduates 2019 first prize</div>
-                                                    <div>● Merit student of Shandong university</div>
-                                                    <div>● CMC 2019 third prize</div>
-                                                    <div>● Specialty Second Class Scholarship</div>
-                                                    <div>● CUMCM 2020 first prize</div>
-                                                    <div>● Academic First Class Scholarship</div>
-                                                    <div>● Outstanding Youth League Cadre of the Year</div>
-                                                    <div>● Merit student of Shandong university</div>
-                                                    <div>● National Physics Experiment Competition third prize</div>
-                                                    <div>● Specialty First Class Scholarship</div>
-                                                    <div>● APMCM third prize</div>
-                                                    <div>● MCMICM Successful participate</div>
-                                                    <div>● 10th Mathor cup third prize</div>
-                                                    <div>● CMC 2020 third prize</div>
-                                                    <div>● MCMICM Successful participate</div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table width="950" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                        <tr>
-                            <td height="25">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td align="center">
-                                <table width="100%" border="0" cellspacing="8" cellpadding="0">
-                                    <tbody>
-                                        <tr>
-                                </table>
-                                <div>注：以上所有证件可在导航栏“文书证件”找到</div>
+        }
+
+
+
+
+        function make_polygon_layout() {
+            paper = arguments[0];
+            polygon = arguments[1];
+            idex = arguments[2];
+            tempA = [];
+            for (var i = 0; i < polygon.coordinates.length; i++) {
+                tempA[i] = polygon.coordinates[i];
+            }
+            /* get largest and smallest x coordinate */
+            tempA.sort(function(a, b) {
+                return a[0] - b[0];
+            });
+            sX = tempA[0][0];
+            bX = tempA[tempA.length - 1][0];
+
+            /* get largest and smallest ycoordinate */
+            tempA.sort(function(a, b) {
+                return a[1] - b[1];
+            });
+            sY = tempA[0][1];
+            bY = tempA[tempA.length - 1][1];
+
+            polygon.startPoint = [sX, sY];
+            polygon.endPoint = [bX, bY];
+
+            polygon.width = polygon.endPoint[0] - polygon.startPoint[0];
+            polygon.height = polygon.endPoint[1] - polygon.startPoint[1];
+
+            var pattern = paper.image(polygon.image_src, 0, 0, polygon.width, polygon.height)
+                .attr("preserveAspectRatio", "xMidYMid slice")
+                .pattern({
+                    'x': polygon.startPoint[0],
+                    'y': polygon.startPoint[1],
+                    'width': polygon.width,
+                    'height': polygon.height
+                }).attr('viewBox', "");
+
+            var path = paper.path({
+                "d": make_path(polygon.coordinates),
+                "strokeWidth": polygon.strokeWidth,
+                'stroke-linejoin': "round",
+                'stroke': polygon.strokeStyle,
+                "fill": pattern,
+                "id": idex,
+                "tag": polygon.link
+            });
+
+            path.click(function(event) {
+                //alert(path.attr("id"))
+                window.open(path.attr("tag"))
+            });
+
+
+        }
+
+        function make_path() {
+            d = "M";
+            coordinates = arguments[0];
+            for (var i = 0; i < coordinates.length; i++) {
+                if (i == 0) {
+                    d += coordinates[i][0] + " " + coordinates[i][1]
+                } else {
+                    d += "L" + coordinates[i][0] + " " + coordinates[i][1]
+                }
+            }
+            return d + "z";
+            // return d;
+        }
+    </script>
 </body>
 
 </html>
